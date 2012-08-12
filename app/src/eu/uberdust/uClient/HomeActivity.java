@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-
+/*
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
+*/
 import eu.uberdust.model.Capability;
 import eu.uberdust.model.Room;
 
@@ -87,7 +87,7 @@ public class HomeActivity extends Activity {
     	integrator.initiateScan(IntentIntegrator.QR_CODE_TYPES);*/
         
     }
-
+    /*
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (result != null) {
@@ -99,6 +99,6 @@ public class HomeActivity extends Activity {
           }
         }
       }
-    
+     */
     
 }
