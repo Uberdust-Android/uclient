@@ -1,0 +1,22 @@
+#####
+# Here is a list of files to be ignored by git
+# Project: uClient
+# Directory: Parent
+#####
+
+# zxing library source and checksum
+library-zxing/
+library-zxing.sum
+
+# Android built application files
+*.apk
+*.ap_
+# Android files for the dex VM
+*.dex
+# Java class files
+*.class
+# Android generated files
+bin/
+gen/
+# Local configuration file (sdk path, etc)
+local.properties
