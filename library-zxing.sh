@@ -1,18 +1,28 @@
 #!/bin/bash
 
+ZXING_SVN=http://zxing.googlecode.com/svn/trunk
+ZXING_CHECKSUM=library-zxing.sum
+
 function getlib {
     echo "Exporting source from SVN..."
-    svn export http://zxing.googlecode.com/svn/trunk/core library-zxing/core
-    svn export http://zxing.googlecode.com/svn/trunk/android library-zxing/android
+    svn export $ZXING_SVN/core library-zxing/core
+    svn export $ZXING_SVN/android library-zxing/android
     echo "Patching zxing android library project"
     echo "android.library=true" >> library-zxing/android/project.properties
     echo "Calculating MD5 hash..."
-    find library-zxing/ -type f -print0 | xargs -0 md5sum >> library-zxing.sum
+    find library-zxing/ -type f -print0 | xargs -0 md5sum >> $ZXING_CHECKSUM
 }
 
 echo "Checking existing zxing library source integrity..."
-if [[ `md5sum -c library-zxing.sum 2>/dev/null | grep FAILED | wc -l` > 0 ]]; then
-    rm -f library-zxing.sum
+if [ ! -f $ZXING_CHECKSUM ]; then
+    rm -f $ZXING_CHECKSUM
+    rm -rf library-zxing/
+    echo "No checksum file was found!"
+    getlib
+    exit
+fi
+if [[ `md5sum -c $ZXING_CHECKSUM 2>/dev/null | grep FAILED | wc -l` > 0 ]]; then
+    rm -f $ZXING_CHECKSUM
     rm -rf library-zxing/
     echo "Existing zxing source is corrupted!"
     getlib
