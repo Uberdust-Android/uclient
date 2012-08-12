@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">uClient</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_home">Uberdust Client</string>
+    <string name="menu_home">About</string>
+    <string name="menu_settings">Settings</string>
+    <string name="keramidas">Keramidas Vasileios</string>
+    <string name="nikoloutsa">Nikoloutsakos Nikolaos</string>
+    <string name="prevezan">Prevezanos Ioannis</string>
+    <string name="code">Uberdust Mobile is an open source project!\nCode is located at github!</string>
+    <string name="title_activity_room">RoomActivity</string>
+    <string name="title_activity_capability">CapabilityActivity</string>
+
+</resources>

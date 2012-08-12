@@ -1,0 +1,6 @@
+[submodule "library-viewpagerindicator"]
+	path = library-viewpagerindicator
+	url = https://github.com/JakeWharton/Android-ViewPagerIndicator.git
+[submodule "library-actionbarsherlock"]
+	path = library-actionbarsherlock
+	url = https://github.com/JakeWharton/ActionBarSherlock.git
